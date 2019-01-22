@@ -3,9 +3,9 @@
 ### Código suplementar para a disciplina Python para Modelagem Baseada em Agentes
 
 ### Prof. Bernardo Alves Furtado
-### bernardo dot furtado [at] ipea dot gov.br
+### bernardo dot furtado '(.*[at].*)' ipea . gov.br
 
 ### Referências básicas
 
-### Think Python: greenteapress.com/thinkpython2/thinkpython2.pdf
-### Think Complexity: greenteapress.com/complexity/thinkcomplexity.pdf
+### Think Python: http://greenteapress.com/thinkpython2/thinkpython2.pdf
+### Think Complexity: http://greenteapress.com/complexity2/thinkcomplexity2.pdf
