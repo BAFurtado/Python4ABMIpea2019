@@ -1,18 +1,8 @@
-""" Exemplo de histogramas usando dicionários.
+""" Exemplo de sorted histogramas usando dicionários.
     Adaptado de Think Python. Chapter 11
 
 """
 import lists_generator
-
-print('Introducing dictionary method .get(key, default values')
-print(dict().get)
-print('')
-
-""" To illustrate the process, try to add a value to a key that does not exist.
-    e = dict() 
-    e['nokey'] = e['nokey'] + 1
-    What happens?
-    """
 
 
 def histogram(data):
@@ -22,12 +12,17 @@ def histogram(data):
     return d
 
 
+def print_sorted(d):
+    for key in sorted(d):
+        print(key, d[key])
+
+
 if __name__ == '__main__':
     string1 = 'paralelepipedo'
     d1 = histogram(string1)
     print(string1)
-    print(d1)
+    print_sorted(d1)
     print('')
     d2 = histogram(lists_generator.generate())
     print('lista aleatória')
-    print(d2)
+    print_sorted(d2)
