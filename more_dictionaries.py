@@ -5,7 +5,7 @@ from collections import defaultdict
 my_dict = defaultdict(list)
 
 NAMES = ['Maria', 'Priscila', 'Teo', 'Nina', 'Júnior', 'Paulo', 'Rita', 'Rui', 'Pamela']
-AGES = [30, 29, None, 45, 31, 28, 25, 41, 15]
+AGES = [30, 29, 26, 45, 31, 28, 25, 41, 15]
 BIRTHDAYS = ['10-01', '13-09', '10-11', '20-01', '23-08', '31-01', '15-06', '02-08', '03-07']
 AFFILIATION = ['MPU', 'TCU', 'MJ', 'ME', 'MT', 'PRESI', 'INEP', 'INPE', 'BC']
 
@@ -15,3 +15,10 @@ for i in range(len(NAMES)):
 
 for key in my_dict.keys():
     print(key, my_dict[key])
+
+total = 0
+for key in my_dict:
+    total += my_dict[key][0]
+
+print('')
+print('A média de idades é:', total/len(my_dict))
