@@ -1,13 +1,22 @@
-b = list()
-c = list()
-name = 'maria'
-for i in name:
-    b.append(i)
+""" Demonstrating how to reverse a list by hand
+    Try using the list method l.reverse()
+"""
 
-print(b)
 
-for i in range(len(b)):
-    c.append(b.pop())
+def reversing(name):
+    b = list()
+    for i in name:
+        b.append(i)
 
-# print(b)
-print(c)
+    print(b)
+
+    c = list()
+    for i in range(len(b)):
+        c.append(b.pop())
+
+    print(c)
+
+
+if __name__ == '__main__':
+    ipt = 'maria'
+    reversing(ipt)
