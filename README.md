@@ -1,5 +1,6 @@
 ### This is a Python class at Institute for Applied Economic Research (Ipea) in Portuguese ###
 
+### Se você é aluno do curso, espere até que o conteúdo tenha sido dado em aula, antes de verificar o código.
 ### Código suplementar para a disciplina Python para Modelagem Baseada em Agentes
 
 ### Prof. Bernardo Alves Furtado
