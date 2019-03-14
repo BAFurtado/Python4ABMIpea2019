@@ -12,7 +12,7 @@ def area_circle(r):
         Retorna a área
         """
 
-    # Fórumula área
+    # Fórmula área
     area = math.pi * r ** 2
     return area
 
