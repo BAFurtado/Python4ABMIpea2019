@@ -14,3 +14,7 @@ ps()
 soma()
 function3.soma(5, 6)
 print(area_circle(5))
+
+
+if __name__ == '__main__':
+    pass

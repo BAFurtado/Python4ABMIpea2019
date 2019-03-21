@@ -2,17 +2,14 @@
 Adapted from Think Python 2, by Allen Downey. Chapter 4
 """
 
-
 import turtle
 
 
 def square(agent, l):
     """ Receives a turtle and moves it in a square
-        Specifically, not using for (yet)
+
     """
-
     agent.speed(3)
-
     for i in range(4):
         agent.fd(l)
         agent.lt(90)
