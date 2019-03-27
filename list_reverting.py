@@ -18,5 +18,5 @@ def reversing(name):
 
 
 if __name__ == '__main__':
-    ipt = 'maria'
+    ipt = 'Esa Pekka'
     reversing(ipt)
