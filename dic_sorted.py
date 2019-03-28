@@ -6,6 +6,7 @@ import lists_generator
 
 
 def histogram(data):
+    # Calcula a frequência de ocorrência de cada key
     d = dict()
     for each in data:
         d[each] = d.get(each, 0) + 1
@@ -13,6 +14,8 @@ def histogram(data):
 
 
 def print_sorted(d):
+    # Ordena o dicionário de acordo com a ordem alfabética
+    # das keys
     for key in sorted(d):
         print(key, d[key])
 
