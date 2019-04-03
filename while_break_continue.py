@@ -16,7 +16,7 @@ def while_true():
 def for_only_odd(n):
     for i in range(n):
         n -= 1
-        if n % 2 == 0:
+        if n % 13 == 0:
             print(n)
 
         else:
@@ -24,7 +24,19 @@ def for_only_odd(n):
             print('This is an never going to print')
 
 
+def outro_continue_ou_break(test):
+    for letter in 'Python':     # First Example
+        if letter == 'h':
+            if test == "break":
+                break
+            if test == "continue":
+                continue
+        print('Current Letter :', letter)
+
+
+
 if __name__ == '__main__':
-    got_it(10)
+    # got_it(8)
     # while_true()
-    for_only_odd(10)
+    # for_only_odd(100)
+    outro_continue_ou_break("continue")
