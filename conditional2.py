@@ -4,6 +4,7 @@
     """
 
 import random
+import sys
 
 
 def t_valor(x, draw, c):
@@ -12,7 +13,7 @@ def t_valor(x, draw, c):
     elif x == draw:
         print('Congratulations, you got it')
         print('It took you {} tries'.format(c))
-        quit()
+        sys.exit()
     else:
         print('your guess is lower than the value')
 
