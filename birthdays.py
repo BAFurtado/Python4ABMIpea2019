@@ -29,7 +29,6 @@ def prob(n, r):
           .format(n, count/r * 100))
 
 
-
 if __name__ == '__main__':
     # r é o número de iterações
     r = 10000
@@ -39,4 +38,3 @@ if __name__ == '__main__':
     # print(has_duplicates([2, 3, 4]))
     # print(has_duplicates([2, 3, 3]))
     prob(n, r)
-    
