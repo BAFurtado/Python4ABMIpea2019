@@ -1,4 +1,5 @@
 """ Class example to create and maintain a persistent database using JSON and dictionaries
+    Para usar é necessário sempre entrar com o valor em formato DICIONÁRIO
 """
 
 
@@ -9,6 +10,8 @@ from collections import defaultdict
 
 def my_database(k, v):
     # Checking if database exists
+    ''' args:
+        return '''
     if os.path.exists('my_database.json'):
         with open('my_database.json', 'r') as f:
             data = json.load(f)
@@ -34,6 +37,9 @@ def my_database(k, v):
 
 
 if __name__ == '__main__':
-    key = 'Heather'
-    value = {'admission': '04/01/2019'}
+    # key = '054'
+    # value = {'admission': '04/01/2019'}
+    # d = my_database(key, value)
+    key = '021'
+    value = {'nome': 'Paul', 'órgão': 'ABIN'}
     d = my_database(key, value)

@@ -27,7 +27,7 @@ def numbers():
 def reading():
     with open('experience.txt', 'r') as f:
         lida = f.read()
-    print(lida)
+    # print(lida)
     return lida
 
 
@@ -39,7 +39,7 @@ def recover_list(li):
         if len(each) > 0:
             recovered.append(int(each))
 
-    print(recovered)
+    # print(recovered)
     return recovered
 
 
@@ -48,9 +48,9 @@ def sum_list(recovered):
 
 
 if __name__ == '__main__':
-    first()
-    second()
-    numbers()
+    # first()
+    # second()
+    # numbers()
     r = reading()
     ll = recover_list(r)
     sum_list(ll)

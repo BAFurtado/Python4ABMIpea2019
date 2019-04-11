@@ -17,7 +17,7 @@ def load_pickle():
 
 
 if __name__ == '__main__':
-    r = reading()
-    l = recover_list(r)
-    save_pickle(l)
+    # r = reading()
+    # l = recover_list(r)
+    # save_pickle(l)
     load_pickle()
