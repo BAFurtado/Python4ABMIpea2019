@@ -19,8 +19,8 @@ class Animal:
     def get_old(self):
         self.age += 1
 
-    # def __repr__(self):
-    #     return 'My name is {}'.format(self.name)
+    def __repr__(self):
+        return 'My name is {}'.format(self.name)
 
 
 if __name__ == '__main__':
