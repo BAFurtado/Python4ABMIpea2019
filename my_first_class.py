@@ -1,3 +1,4 @@
+""" Exemplo de classe Animal """
 
 
 class Animal:
