@@ -23,6 +23,7 @@ class Template:
 
         # Ou ainda, um valor randômico
         self.luck = random.randrange(1, 60)
+        self.partner = None
 
     def method1(self, quantia):
         # Modifica um valor armazenado
@@ -39,6 +40,10 @@ class Template:
         # Um método pode acessar um outro método.
         # Nesse caso, adicionando um valor aleatório ao arg1!
         self.method1(self.luck)
+
+    def match(self, outro_agente):
+        self.partner = outro_agente
+        outro_agente.partner = self
 
 
 if __name__ == '__main__':
