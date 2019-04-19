@@ -6,9 +6,6 @@ import random
 
 # Passos
 # 0. Entenda o início já explicitado abaixo
-# 1. Inclua um método __lt__ (less than) que compara duas cartas (self e outra).
-# Use primeiro o naipe depois o rank da carta.
-# Portanto, nesse caso, qualquer carta de Espadas está acima de Copas, e assim por diante
 # 2. Next, vamos criar um baralho inteiro: DECK
 # Crie uma classe Deck cuja __init__ é um nested for loop que armazena todas as cartas (todos os
 # naipes e todos os ranks dentro de uma lista.
@@ -16,6 +13,8 @@ import random
 # 4. Crie um método que insere uma carta no Deck. add_card
 # 5. Crie um método que embaralha (shuffle) as cartas
 # 6. Volte ao Deck. Crie um método que move um n número de cartas (entre self e outro)
+# 7. Crie uma class Hand que override o método __init__ do Deck e reinicia o self.cards
+# como lista vazia
 
 
 class Card:
@@ -32,6 +31,12 @@ class Card:
         self.rank = rank
         self.naipe = naipe
 
+    def __lt__(self, other):
+        t1 = self.naipe, self.rank
+
+        t2 = other.naipe, other.rank
+        return t1 < t2
+
     def __str__(self):
         return '{} de {}'.format(Card.rank_names[self.rank],
                                  Card.naipes[self.naipe])
@@ -42,19 +47,13 @@ class Deck:
     def __init__(self):
         """ Crie um Deck de 52 cartas
         """
-        self.cards = list()
         pass
 
     def shuffle(self):
-        random.shuffle(self.cards)
-
+        pass
 
     def move_cards(self, outro, n):
         pass
-
-    def __str__(self):
-        for each in self.cards:
-            print(each)
 
 
 class Hand(Deck):
@@ -67,6 +66,9 @@ if __name__ == '__main__':
     print(zap)
     print(espadilha)
 
+    d = Deck()
+    h = Hand()
+
     # Distribui 5 cartas para 4 jogadores
     # morto = Deck()
     # morto.shuffle()
@@ -75,5 +77,3 @@ if __name__ == '__main__':
     #     players.append(Hand())
     # for each in players:
     #     morto.move_cards(each, 5)
-    # for each in players:
-    #     print(each)
