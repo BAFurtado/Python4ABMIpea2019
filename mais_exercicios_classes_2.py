@@ -27,13 +27,12 @@ class Card:
                   '8', '9', '10', 'Valete', 'Dama', 'Rei']
     naipes = ['Paus', 'Ouros', 'Copas', 'Espadas']
 
-    def __init__(self, rank=2, naipe=0):
+    def __init__(self, rank=4, naipe=0):
         self.rank = rank
         self.naipe = naipe
 
     def __lt__(self, other):
         t1 = self.naipe, self.rank
-
         t2 = other.naipe, other.rank
         return t1 < t2
 
@@ -47,33 +46,59 @@ class Deck:
     def __init__(self):
         """ Crie um Deck de 52 cartas
         """
-        pass
+        self.cards = list()
+        for n in range(4):
+            for r in range(1, 14):
+                self.cards.append(Card(r, n))
+
+    def pop_card(self):
+        return self.cards.pop()
 
     def shuffle(self):
-        pass
+        random.shuffle(self.cards)
+
+    def add_card(self, outra):
+        self.cards.append(outra)
 
     def move_cards(self, outro, n):
-        pass
+        for c in range(n):
+            outro.add_card(self.pop_card())
 
 
 class Hand(Deck):
-    pass
+    def __init__(self):
+        self.cards = list()
 
 
 if __name__ == '__main__':
-    zap = Card(4, 0)
-    espadilha = Card(1, 3)
-    print(zap)
-    print(espadilha)
+    # # zap = Card()
+    # # valete = Card(11, 0)
+    # # espadilha = Card(1, 3)
+    # # sete_copas = Card(7, 2)
+    # #
+    # # print(zap < valete)
+    # # print(valete < sete_copas)
+    #
+    # d = Deck()
+    # print(len(d.cards))
+    # d.shuffle()
+    # # print(d.pop_card())
+    # # print(len(d.cards))
+    # # print(d.pop_card())
+    # #
+    # # d.add_card(zap)
+    # # d.add_card(espadilha)
+    # h = Hand()
+    # print(len(h.cards))
 
-    d = Deck()
-    h = Hand()
 
     # Distribui 5 cartas para 4 jogadores
-    # morto = Deck()
-    # morto.shuffle()
-    # players = list()
-    # for i in range(4):
-    #     players.append(Hand())
-    # for each in players:
-    #     morto.move_cards(each, 5)
+    morto = Deck()
+    morto.shuffle()
+    players = list()
+    for i in range(4):
+        players.append(Hand())
+    for each in players:
+        morto.move_cards(each, 5)
+
+    print(len(morto.cards))
