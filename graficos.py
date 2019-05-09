@@ -10,7 +10,7 @@ import numpy as np
 x = np.random.randn(10000)
 
 # 100 é o número de bins do histograma
-plt.hist(x, 100)
+plt.hist(x, 20, color='red')
 
 # Note que aceita comandos tipo LaTeX -- entre símbolo dollar ($)
 plt.title('Normal distribution with $\mu=0, \sigma=1$')

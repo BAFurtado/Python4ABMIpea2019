@@ -173,7 +173,7 @@ if __name__ == '__main__':
     # grid.segregation()
     # plt.show()
 
-    grid = Schelling(n=20, p=0.33)
+    grid = Schelling(n=100, p=0.33)
     viewer = SchellingViewer(grid)
     anim = viewer.animate(frames=30)
     plt.show()

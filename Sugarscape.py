@@ -254,7 +254,7 @@ if __name__ == '__main__':
     # b = make_visible_locs(2)
     # c = distances_from(5, 2, 2)
 
-    env = Sugarscape(50, num_agents=200)
+    env = Sugarscape(50, num_agents=1500)
     viewer = SugarscapeViewer(env)
     # anim = viewer.animate(frames=2, interval=10)
     anim = viewer.animate(frames=2)
