@@ -1,12 +1,14 @@
 # Chama a biblioteca
 import pandas as pd
 import matplotlib.pyplot as plt
+import numpy as np
 
 # Cria uma DataFrame, utilizando-se de um dicioário.
 # Keys são column names
 # Values, em listas, são os valores
 data = pd.DataFrame({'col_a': [0, 1, 2, 3, 4, 5, 6, 7],
-                     'col_b': [7, 6, 4, 2, 1, 1, 1, 0]})
+                     'col_b': [7, 6, 4, 2, 1, 1, 1, 0],
+                     'strings': ['a', 'b', 'c', 9, 8, 7, np.nan, np.nan]})
 
 # Exame dos dados
 data.head()
@@ -22,13 +24,16 @@ data.max()
 
 # Muito fácil de operar intercâmbio de dados.
 # Para salvar para EXCEL, sempre inclua ponto e vírgula como separador
+data.to_csv('nome_do_arquivo.csv', sep=';', index=False)
 data.to_csv('nome_do_arquivo.csv', sep=';')
 
 # Para ler o arquivo
+data = pd.read_csv('nome_do_arquivo.csv', sep=';', index_col=False)
 data = pd.read_csv('nome_do_arquivo.csv', sep=';')
 
 # Para deletar uma coluna
-data.drop('Unnamed: 0', axis=1, inplace=True)
+
+data = data.drop('Unnamed: 0', axis=1)
 
 # Identificar nomes colunas
 data.columns
@@ -41,10 +46,11 @@ data.col_b.sum()
 data['col_a'].max()
 
 # Seleciona linhas com valor maior que 3
-data.loc[data.col_a > 3, 'col_a']
-data.loc[data.col_a > 3, :]
-data
-data.loc[data.col_a > 3, 'col_b']
+t1 = data.loc[data.col_a > 3, 'col_a']
+t2 = data.loc[data.col_a > 3, :]
+
+t3 = data.loc[data.col_a > 3, 'col_b']
+t4 = data.loc[data.strings == '8', 'col_b']
 
 # Renaming columns
 data.rename(columns={'col_a': 'col_a1'}, inplace=True)
@@ -62,6 +68,6 @@ data.groupby(by='col_b').col_b.agg(['sum', 'count'])
 
 # Para plotar direto do DataFrame
 
-data.col_a.plot(kind='hist')
+data.col_a1.plot(kind='hist')
 plt.show()
 
