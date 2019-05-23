@@ -4,7 +4,6 @@ from math import sqrt
 params = {'percentual': .1}
 
 
-
 class Firms:
 
     def __init__(self, combustible):
