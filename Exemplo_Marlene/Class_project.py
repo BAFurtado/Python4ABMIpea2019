@@ -6,13 +6,14 @@
 #
 #
 # 1. Objetivo: criar agentes e interações.
+import random
 
 
 class Investors:
     # cria classe: Investidores
     def __init__(self, idinves):  # indicar um número único para cada investidor
         self.id = idinves
-        self.balance = 0
+        self.balance = random.randrange(1, 20000)
         self.interest = 0
 
     def deposit(self, amount):
@@ -76,10 +77,8 @@ class Banks:
         else:
             return False
 
-    def receives_loan(self, amount, investidor):
-        self.balance += amount * .7
-        self.investor_pay(amount, investidor)
-
+    def receives_loan(self, amount):
+        self.balance += amount
 
 class Firms:
     # cria a classe Firmas
@@ -99,15 +98,18 @@ class Firms:
             return False
 
     def payment_loan(self, amount):
-        self.balance -= self.debt
+        self.balance -= amount
+        return amount
         # print('Agent has {} fun right now'.format(self, amount))
 
 
+
+
 if __name__ == '__main__':
-    i = Investors(0)
-    b = Banks(0)
-    valor_investir = 10
-    if i.check_funds(valor_investir):
-        b.receive_deposit(i.deposit(valor_investir))
-    print(i.balance)
-    print(b.balance)
+    f1 = Firms(0)
+    f1.get_loan(100)
+    print(f1.check_funds())
+    f1.payment_loan(110)
+    print(f1.check_funds())
+    b1 = Banks(0)
+    b1.receives_loan(f1.payment_loan(110))
